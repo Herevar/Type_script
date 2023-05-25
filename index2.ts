@@ -13,10 +13,17 @@ interface Historia {
     history : HistoryEntry[];
 }
 
+const tescik: HistoryEntry = {
+    createdAt : new Date() ,
+    event : 'jakis event' ,
+    
+}
+
 class User implements Human, Historia{
     name: string;
     age: number;
-    history: HistoryEntry[]; //hmm
+    history: HistoryEntry[]; //hmm albo w konstruktorze " this.history = []" albo tutaj "=[]"
+    //gdyby tu było "surname : string" to albo dopoisac = '' albo w kontruktorze
     
     constructor(name : string, age : number,){
     this.name = name;
@@ -24,7 +31,7 @@ class User implements Human, Historia{
     }
 
     showHistory(): void{
-
+        console.log("test")// // nastepnie tutaj juz jest jako stworzona instancja do ktorej sie odwłujemy this.history
     }
 
     addHistory(entry : HistoryEntry): void {
