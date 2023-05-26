@@ -14,6 +14,7 @@ interface HistoryKurwa {
     historyOld : string ;
 }
 //jak nazwe History i implementuje to sie na dole coś pierdoli i pierdylion dziwnych rzeczy dopsiuje w tym length:number - o chuj chodzi ?
+// cos z nazwaniem "History" interface jakies rzeczy sie dzieja - pewnie tak jest wbudowane teraz
 interface ByleCo {
     cokolwiek : string [];
 }
@@ -35,7 +36,7 @@ const personB: Person = {
         console.log(`aaa, ${this.name} !`)
     },
     achievement : ['cos tam']
-    
+// tak w klasie w implementacji podpowiada pozniej ->    achievement?: string[] | undefined;
 }
 
 
@@ -45,17 +46,3 @@ function dateOfBirth( {age}: Person) : number {
 }
 
 console.log(dateOfBirth(personA))
-
-
-class Ludzie implements Person, ByleCo, HistoryKurwa {
-    historyOld: string;
-    cokolwiek: string[];
-    name: string;
-    age: number;
-    isdev: boolean;
-    greet(): void {
-        throw new Error("Method not implemented.");
-    }
-    achievement?: string[] | undefined;
-    
-}
