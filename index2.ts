@@ -22,7 +22,8 @@ const tescik: HistoryEntry = {
 class User implements Human, Historia{
     name: string;
     age: number;
-    history: HistoryEntry[]; //hmm albo w konstruktorze " this.history = []" albo tutaj "=[]"
+    history: HistoryEntry[] =[]; 
+    //hmm albo w konstruktorze " this.history = []" albo tutaj "=[]"
     //gdyby tu było "surname : string" to albo dopoisac = '' albo w kontruktorze
     
     constructor(name : string, age : number,){
@@ -40,7 +41,7 @@ class User implements Human, Historia{
 }
 
 const person = new User ("mietek", 234)
-person.showHistory()
+// person.showHistory()
 person.addHistory({
     createdAt: new Date(),
     event : 'zalogowano'
@@ -99,15 +100,25 @@ function withMostPointsSort (ar : PersonA[]) : PersonA | null {
 }
 /// ZADANKO 
 
-class User2 {
-    constructor(name2) {
+
+interface Ludzik {
+    name2 : string ;
+}
+
+class User2 implements Ludzik {
+
+    name2: string;
+
+    constructor(name2 : string) {
         this.name2 = name2;
     }
+    
 }
 
 const json = `{"name2":"Jan"}`;
-const {name2} = JSON.parse(json);
-let userx = name2 === '' ? '' : `User2 ${name2}` ;
+const {name2} : Ludzik = JSON.parse(json);
+let userx  = (name2 === '' ? '' : `${name2}`) ;
+// console.log(userx)
 
 if (userx !== '') {
     userx = new User2(userx);
