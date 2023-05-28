@@ -117,8 +117,10 @@ class User2 implements Ludzik {
 
 const json = `{"name2":"Jan"}`;
 const {name2} : Ludzik = JSON.parse(json);
-let userx  = (name2 === '' ? '' : `${name2}`) ;
-// console.log(userx)
+    // ale sie tak nie zapisuje "bo to dziwne...", wiec : const {name2} = JSON.parse(json) as User2;
+    //wtedy sie w {} zrobi destrukturyzacja 
+let userx : string | User2 = (name2 === '' ? '' : `${name2}`) ;
+// musimy tu zadeklaorwac, że zmienna 'userx' (domyslnie jest)moze byc string'iem ALBO obiektem User2 - bo ponizej sie nim staje
 
 if (userx !== '') {
     userx = new User2(userx);
