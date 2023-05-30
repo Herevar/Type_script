@@ -18,10 +18,13 @@ interface OneNumber {
 
 }
 
+// type Znaki = '+' | '-' | '*' | '/'
+
+
 interface TwoNumber {
     a: number ;
     b: number ;
-    // sign? : '+' | '-' | '*' | '/'
+    // sign? : '+' | '-' | '*' | '/'  //Znaki;
     sign? : TwoEnum
 }
 
